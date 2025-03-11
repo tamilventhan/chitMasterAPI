@@ -1,5 +1,5 @@
 import Employee from '../models/employeeModel.js';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 // Register Employee
@@ -69,12 +69,12 @@ export const login = async (req, res) => {
 
     // Check password if provided
     if (password) {
-      passwordMatch = await bcrypt.compare(password, employee.password);
+       passwordMatch =  bcrypt.compare(password, employee.password);
     }
 
     // Check MPIN if provided
     if (mpin) {
-      mpinMatch = await bcrypt.compare(mpin, employee.mpin);
+       mpinMatch  = bcrypt.compare(mpin, employee.mpin);
     }
 
     // Allow login if either password or MPIN is correct
