@@ -1,0 +1,27 @@
+{
+  "name": "chitmasterapi",
+  "version": "1.0.0",
+  "description": "Chit funds management api service application",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm start",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "chits",
+    "finance",
+    "accounts"
+  ],
+  "author": "Tamilventhan.T",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.1",
+    "nodemon": "^3.1.9"
+  }
+}
