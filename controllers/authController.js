@@ -22,8 +22,8 @@ export const loginEmployee = async (req, res) => {
     const isMatch = await employee.comparePassword(password);
     if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
     
-    const token = employee.generateAuthToken();
-    res.status(200).json({ token, employee: { _id: employee._id, fullName: employee.fullName, role: employee.role } });
+    const access_key = employee.generateAuthToken();
+    res.status(200).json({ access_key, employee: { _id: employee._id, fullName: employee.fullName, role: employee.role } });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
