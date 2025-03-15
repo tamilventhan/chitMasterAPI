@@ -20,6 +20,8 @@ export const loginEmployee = async (req, res) => {
     if (!employee) return res.status(400).json({ message: 'Invalid credentials' });
     
     const isMatch = await employee.comparePassword(password);
+    console.log(isMatch);
+    
     if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
     
     const access_key = employee.generateAuthToken();
